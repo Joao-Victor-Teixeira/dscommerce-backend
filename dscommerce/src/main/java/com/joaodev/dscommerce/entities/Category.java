@@ -73,9 +73,5 @@ public class Category {
         } else if (!id.equals(other.id))
             return false;
         return true;
-    }
-
-  
-
-    
+    }  
 }
