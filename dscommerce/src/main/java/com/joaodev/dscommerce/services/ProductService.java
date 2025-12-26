@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.joaodev.dscommerce.dto.CategoryDTO;
 import com.joaodev.dscommerce.dto.ProductDTO;
 import com.joaodev.dscommerce.dto.ProductMinDTO;
+import com.joaodev.dscommerce.entities.Category;
 import com.joaodev.dscommerce.entities.Product;
 import com.joaodev.dscommerce.repositories.ProductRepository;
 import com.joaodev.dscommerce.services.exceptions.DatabaseException;
@@ -76,6 +78,13 @@ public class ProductService {
         entity.setDescription(dto.getDescription());
         entity.setPrice(dto.getPrice());
         entity.setImgUrl(dto.getImgUrl());
+
+        entity.getCategories().clear();
+        for (CategoryDTO catDTO : dto.getCategories()) {
+            Category cat = new Category();
+            cat.setId(catDTO.getId());
+            entity.getCategories().add(cat);
+        }
     }
 
 }
