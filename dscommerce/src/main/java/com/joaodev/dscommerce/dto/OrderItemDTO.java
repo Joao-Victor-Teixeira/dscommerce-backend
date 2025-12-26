@@ -4,7 +4,7 @@ import com.joaodev.dscommerce.entities.OrderItem;
 
 public class OrderItemDTO {
 
-    private Long producId;
+    private Long productId;
     private String name;
     private Double price;
     private Integer quantity;
@@ -13,21 +13,21 @@ public class OrderItemDTO {
     }
 
     public OrderItemDTO(Long producId, String name, Double price, Integer quantity) {
-        this.producId = producId;
+        this.productId = producId;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
 
     public OrderItemDTO(OrderItem entity) {
-        producId = entity.getProduct().getId();
+        productId = entity.getProduct().getId();
         name = entity.getProduct().getName();
         price = entity.getPrice();
         quantity = entity.getQuantity();
     }
 
-    public Long getProducId() {
-        return producId;
+    public Long getProductId() {
+        return productId;
     }
 
     public String getName() {
