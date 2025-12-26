@@ -84,5 +84,5 @@ public class ResourceServerConfig {
             new CorsFilter(corsConfigurationSource()));
     bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
     return bean;
-}
+	}
 }
