@@ -2,13 +2,15 @@ package com.joaodev.dscommerce.repositories;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import com.joaodev.dscommerce.entities.User;
 import com.joaodev.dscommerce.projections.UserDetailsProjection;
 
 @Repository
-public interface UserRepository {
+public interface UserRepository extends JpaRepository<User, Long> {
     
     @Query(nativeQuery = true, value = """
 				SELECT tb_user.email AS username, tb_user.password, tb_role.id AS roleId, tb_role.authority
