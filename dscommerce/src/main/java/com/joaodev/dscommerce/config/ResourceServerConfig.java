@@ -30,7 +30,6 @@ public class ResourceServerConfig {
 	@Value("${cors.origins}")
 	private String corsOrigins;
 
-	/* 
 	@Bean
 	@Profile("test")
 	@Order(1)
@@ -40,8 +39,7 @@ public class ResourceServerConfig {
 				.headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable()));
 		return http.build();
 	}
-	*/
-	
+
 	@Bean
 	@Order(3)
 	public SecurityFilterChain rsSecurityFilterChain(HttpSecurity http) throws Exception {
