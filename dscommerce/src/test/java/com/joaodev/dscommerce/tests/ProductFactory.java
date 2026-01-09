@@ -1,5 +1,6 @@
 package com.joaodev.dscommerce.tests;
 
+import com.joaodev.dscommerce.dto.ProductDTO;
 import com.joaodev.dscommerce.entities.Category;
 import com.joaodev.dscommerce.entities.Product;
 
@@ -17,5 +18,10 @@ public class ProductFactory {
         Category cat = CategoryFactory.createCategory(1L, "Games");
         product.getCategories().add(cat);
         return product;
+    }
+
+    public static ProductDTO createProductDTO(){
+        Product prod = createProduct();
+        return new ProductDTO(prod);
     }
 }
