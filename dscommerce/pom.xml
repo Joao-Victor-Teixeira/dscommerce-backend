@@ -98,6 +98,8 @@
 					<exclude>**/controllers/handlers/**</exclude>
 					<exclude>**/services/exceptions/**</exclude>
 					<exclude>**/projections/**</exclude>
+					<exclude>**/controllers/**</exclude>
+					<exclude>**/util/**</exclude>
     			</excludes>
 			</configuration>
 			<executions>
