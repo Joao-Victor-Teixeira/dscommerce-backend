@@ -79,7 +79,7 @@ public class UserServiceTests {
     UserDTO result = service.getMe();
 
     Assertions.assertNotNull(result);
-    Assertions.assertEquals(result.getEmail(), "maria@gmail.com");
+    Assertions.assertEquals(result.getEmail(), existingUsername);
 }
 
     @Test
